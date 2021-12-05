@@ -71,7 +71,7 @@ defmodule Day3Task2 do
     doGetOneValue(filterByColumn(list, columnCount, shouldBe), columnCount + 1, decideFun)
   end
 
-  def prefer0({zeroCount, oneCount} = counts) do
+  def prefer0({zeroCount, oneCount}) do
     if zeroCount > oneCount do
       "1"
     else if zeroCount == oneCount, do: "0", else: "0"

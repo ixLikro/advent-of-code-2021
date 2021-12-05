@@ -1,0 +1,14 @@
+<component name="ProjectRunConfigurationManager">
+  <configuration default="false" name="Day4" type="org.elixir_lang.elixir.configuration.ConfigurationType" factoryName="Elixir">
+    <module name="AdventOfCode" />
+    <elixir>
+      <argument>Day4.exs</argument>
+    </elixir>
+    <working-directory url="file://$PROJECT_DIR$/day4" />
+    <module name="AdventOfCode" />
+    <module-filters inherit-application-module-filters="true" />
+    <method v="2">
+      <option name="Make" enabled="true" />
+    </method>
+  </configuration>
+</component>
