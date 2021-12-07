@@ -8,10 +8,13 @@ defmodule Day6Task1 do
 
   def simulateDays(list, numberOfDays) do
     1..numberOfDays
-    |> Enum.reduce(list, fn _, acc ->
-      # IO.puts("Day #{x}")
-      doSimulateOneDay(acc)
-    end)
+    |> Enum.reduce(
+         list,
+         fn _, acc ->
+           # IO.puts("Day #{x}")
+           doSimulateOneDay(acc)
+         end
+       )
   end
 
   def doSimulateOneDay(list) do
@@ -39,19 +42,25 @@ defmodule Day6Task2 do
 
   def simulateDays(counts, numberOfDays) do
     1..numberOfDays
-    |> Enum.reduce(counts, fn _, acc ->
-      #IO.puts("Day #{x}")
-      simulateOneDay(acc)
-    end)
+    |> Enum.reduce(
+         counts,
+         fn _, acc ->
+           #IO.puts("Day #{x}")
+           simulateOneDay(acc)
+         end
+       )
   end
 
   def simulateOneDay(counts) do
     zero = Map.get(counts, 0, 0)
 
     updated = 0..7
-    |> Enum.reduce(counts, fn x, counts ->
-      Map.put(counts, x, Map.get(counts, x + 1, 0))
-    end)
+              |> Enum.reduce(
+                   counts,
+                   fn x, counts ->
+                     Map.put(counts, x, Map.get(counts, x + 1, 0))
+                   end
+                 )
     updated
     |> Map.put(6, Map.get(updated, 6, 0) + zero)
     |> Map.put(8, zero)
