@@ -66,21 +66,21 @@ end
 
 defmodule FieldT2 do
   def getBasinCount(field, x, y) do
-    doGedBasinCount(field, x, y, Map.new(), 0)
+    doGetBasinCount(field, x, y, Map.new(), 0)
     |> Map.keys()
     |> length
   end
 
-  def doGedBasinCount(field, x, y, markedPoints, compareValue) do
+  def doGetBasinCount(field, x, y, markedPoints, compareValue) do
     value = Field.get(field, x, y)
     if value > 8 or compareValue > value or Map.get(markedPoints, {x, y}, :false) do
       markedPoints
     else
       markedPoints = Map.put(markedPoints, {x, y}, True)
-      markedPoints = doGedBasinCount(field, x - 1, y, markedPoints, value)
-      markedPoints = doGedBasinCount(field, x + 1, y, markedPoints, value)
-      markedPoints = doGedBasinCount(field, x, y - 1, markedPoints, value)
-      markedPoints = doGedBasinCount(field, x, y + 1, markedPoints, value)
+      markedPoints = doGetBasinCount(field, x - 1, y, markedPoints, value)
+      markedPoints = doGetBasinCount(field, x + 1, y, markedPoints, value)
+      markedPoints = doGetBasinCount(field, x, y - 1, markedPoints, value)
+      markedPoints = doGetBasinCount(field, x, y + 1, markedPoints, value)
       markedPoints
     end
   end
