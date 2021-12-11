@@ -4,7 +4,7 @@
     <elixir>
       <argument>Day8.exs</argument>
     </elixir>
-    <working-directory url="file://$PROJECT_DIR$/day8" />
+    <working-directory url="file://$PROJECT_DIR$/day08" />
     <module name="AdventOfCode" />
     <module-filters inherit-application-module-filters="true" />
     <method v="2">

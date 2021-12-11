@@ -80,8 +80,3 @@ Day6Task1.readInput("input1.txt")
 |> Map.values()
 |> Enum.sum()
 |> IO.inspect
-
-
-
-
-
